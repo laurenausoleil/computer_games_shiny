@@ -1,0 +1,12 @@
+---
+title: "R Notebook"
+---
+
+
+
+1 MVP
+In the CodeClanData package there is a dataset called game_sales. It contains information about world wide video game sales.
+
+We want you to create an interactive visualisation(s) of this data using Shiny - use the tools learned through the lessons on ggplot and Shiny to create the visualisation, and it should have at least one iteractive element where the user can change the visualisation (for example via a widget).
+
+It’s completely up to you which elements of the data you focus on. Please add a small comment with the code of each of your graphs/visuals to explain why you picked viewing the data in this way and what insight you hope the user will gain from it. This is great practice for the group project of starting to think about WHY you are plotting the data and thinking about what insights and decisions do you want the dashboard users to get from it.

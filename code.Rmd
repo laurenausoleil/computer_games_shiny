@@ -1,0 +1,63 @@
+---
+title: "R Notebook"
+---
+
+```{r}
+library(tidyverse)
+library(CodeClanData)
+```
+
+```{r}
+
+sales <- game_sales %>% 
+  rename(year = year_of_release)
+head(sales)
+```
+
+Info: Name, year, genre, publisher, developer, platform
+
+Metrics: sales, critic score, user-score
+
+Total sales by year, in shiny we can split by genre, publisher, platform
+```{r}
+sales %>% 
+  ggplot() +
+  aes(x = year, y = sales) +
+  geom_col()
+```
+
+# Compare critic and user score
+
+```{r}
+mean_reviews <- sales %>% 
+  group_by(year) %>% 
+  summarise(mean_user_score = mean(user_score) * 10,
+            mean_critic_score = mean(critic_score)) %>% 
+  pivot_longer(cols = c(mean_user_score, mean_critic_score),
+               names_to = "reviewer",
+               values_to = "score") %>% 
+  mutate(reviewer = if_else(
+    reviewer == "mean_user_score",
+    "User", 
+    "Critic")) 
+
+mean_reviews %>%
+  ggplot() +
+  aes(x = year, y = score, col = reviewer) +
+  geom_line() +
+  geom_point() +
+  labs(
+    title = "Comparing average critic and user scores over time",
+    y = "Average score of all games",
+    x = "Year",
+    colour = ""
+  )
+  
+```
+
+```{r}
+sales %>% 
+  slice_max(order_by = sales, n = 1) %>% 
+  pull(name)
+```
+

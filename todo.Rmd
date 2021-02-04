@@ -1,0 +1,9 @@
+# Add header
+
+# Remove outline from release over time chart
+
+# Fix scales
+
+# Make key stats pop
+
+# Improve aesthetics

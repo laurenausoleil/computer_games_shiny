@@ -1,0 +1,4 @@
+"0",""
+"0","sales <- game_sales %>% "
+"0","  rename(year = year_of_release)"
+"0","head(sales)"

@@ -1,0 +1,4 @@
+"0","sales %>% "
+"0","  ggplot() +"
+"0","  aes(x = year, y = sales) +"
+"0","  geom_col()"
